@@ -1,0 +1,28 @@
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.RDataTmp
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Data files
+*.csv
+!pml-training.csv
+!pml-testing.csv
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# R Markdown
+*.html
+!prediction_report.html
+
+# Logs
+*.log
