@@ -1,54 +1,54 @@
-# Predição de Qualidade de Exercícios com Machine Learning
+# Predicting Exercise Quality with Machine Learning
 
-Este projeto utiliza técnicas de machine learning para classificar a qualidade de exercícios de levantamento de peso com base em dados de acelerômetros posicionados em diferentes partes do corpo (cinto, antebraço, braço e haltere).
+This project uses machine learning techniques to classify the quality of weightlifting exercises based on accelerometer data positioned on different parts of the body (belt, forearm, arm, and dumbbell).
 
-## Visão Geral
+## Overview
 
-O objetivo deste projeto é prever como bem um exercício de levantamento de peso está sendo realizado. Os dados foram coletados de sensores em equipamentos de ginástica usados por seis participantes, que realizaram o exercício de levantamento de peso de cinco maneiras diferentes:
+The goal of this project is to predict how well a weightlifting exercise is being performed. The data was collected from sensors on gym equipment used by six participants, who performed the weightlifting exercise in five different ways:
 
-- Classe A: Execução correta do exercício
-- Classe B: Cotovelos para frente
-- Classe C: Levantamento parcial do haltere
-- Classe D: Abaixamento parcial do haltere
-- Classe E: Arremesso dos quadris para frente
+- Class A: Correct execution of the exercise
+- Class B: Elbows forward
+- Class C: Partial lifting of the dumbbell
+- Class D: Partial lowering of the dumbbell
+- Class E: Hips thrust forward
 
-## Conteúdo do Repositório
+## Repository Contents
 
-- `prediction_report.Rmd`: Código R Markdown com análise completa
-- `prediction_report.html`: Relatório HTML gerado a partir do R Markdown
-- `pml-training.csv`: Conjunto de dados de treinamento
-- `pml-testing.csv`: Conjunto de dados de teste
+- `prediction_report.Rmd`: R Markdown code with complete analysis
+- `prediction_report.html`: HTML report generated from R Markdown
+- `pml-training.csv`: Training dataset
+- `pml-testing.csv`: Testing dataset
 
-## Metodologia
+## Methodology
 
-O projeto segue as seguintes etapas:
+The project follows these steps:
 
-1. **Preparação dos Dados**: Carregamento e limpeza dos dados, remoção de colunas com muitos valores ausentes
-2. **Pré-processamento**: Remoção de colunas de metadados e conversão de variáveis
-3. **Construção do Modelo**: Implementação de Random Forest para classificação
-4. **Avaliação**: Análise de desempenho usando matriz de confusão e métricas de precisão
-5. **Predição**: Aplicação do modelo aos dados de teste
+1. **Data Preparation**: Loading and cleaning data, removing columns with many missing values
+2. **Preprocessing**: Removing metadata columns and converting variables
+3. **Model Building**: Implementing Random Forest for classification
+4. **Evaluation**: Performance analysis using confusion matrix and accuracy metrics
+5. **Prediction**: Applying the model to test data
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - R
-- Bibliotecas: caret, randomForest, ggplot2, dplyr
+- Libraries: caret, randomForest, ggplot2, dplyr
 
-## Resultados
+## Results
 
-O modelo Random Forest alcançou excelente precisão na classificação da qualidade dos exercícios. Os principais preditores foram os padrões de movimento capturados pelos sensores do cinto e do antebraço.
+The Random Forest model achieved excellent accuracy in classifying exercise quality. The main predictors were movement patterns captured by the belt and forearm sensors.
 
-## Como Executar
+## How to Run
 
-1. Clone este repositório
-2. Abra o arquivo `prediction_report.Rmd` no RStudio
-3. Instale as dependências necessárias (caret, randomForest, ggplot2, dplyr)
-4. Execute o código para reproduzir a análise
+1. Clone this repository
+2. Open the `prediction_report.Rmd` file in RStudio
+3. Install the necessary dependencies (caret, randomForest, ggplot2, dplyr)
+4. Run the code to reproduce the analysis
 
-## Autor
+## Author
 
 Gabriel Demetrios Lafis
 
-## Licença
+## License
 
 MIT
