@@ -2,7 +2,7 @@
 # Predição da Qualidade de Exercícios com Machine Learning
 
 <p align="center">
-  <img src="./hero_image.png" alt="Hero Image - Predicting Exercise Quality with Machine Learning">
+  <img src="./assets/hero_image.png" alt="Hero Image - Predicting Exercise Quality with Machine Learning">
 </p>
 
 [![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://www.r-project.org/)
@@ -47,7 +47,7 @@ O objetivo deste projeto é prever o quão bem um exercício de levantamento de 
 ## Diagrama de Arquitetura
 
 <p align="center">
-  <img src="./architecture_diagram.png" alt="Architecture Diagram - Predicting Exercise Quality with Machine Learning">
+  <img src="./assets/architecture_diagram.png" alt="Architecture Diagram - Predicting Exercise Quality with Machine Learning">
 </p>
 
 ## Methodology
