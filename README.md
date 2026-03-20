@@ -1,186 +1,124 @@
-# 🚀  Prediction Assignment Writeup
+<div align="center">
 
-> Professional HTML project implementing  Prediction Assignment Writeup
+# Weight Lifting Exercise Prediction | Predição de Exercícios de Levantamento de Peso
 
-[![HTML5](https://img.shields.io/badge/HTML5-5-E34F26.svg)](https://img.shields.io/badge/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![R](https://img.shields.io/badge/R-4.3+-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://www.r-project.org/)
+[![RMarkdown](https://img.shields.io/badge/RMarkdown-Report-blue?style=for-the-badge)](https://rmarkdown.rstudio.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](Dockerfile)
+
+**Machine Learning pipeline for Human Activity Recognition (HAR) using wearable sensor data**
 
 [English](#english) | [Português](#português)
+
+</div>
 
 ---
 
 ## English
 
-### 🎯 Overview
+### Overview
 
-** Prediction Assignment Writeup** is a production-grade HTML application that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
+A complete machine learning pipeline for predicting the quality of weight lifting exercises using accelerometer data from wearable sensors. This project implements Random Forest and Gradient Boosting models with cross-validation to classify exercise execution into 5 quality categories (A-E), achieving high prediction accuracy on the Weight Lifting Exercise Dataset.
 
-The codebase comprises **684 lines** of source code organized across **1 modules**, following industry best practices for maintainability, scalability, and code quality.
-
-### ✨ Key Features
-
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
-
-### 🏗️ Architecture
+### Architecture
 
 ```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+flowchart LR
+    A[Raw Sensor Data] --> B[Data Cleaning]
+    B --> C[Feature Engineering]
+    C --> D[Train/Test Split]
+    D --> E[Random Forest]
+    D --> F[GBM]
+    E --> G[Cross-Validation]
+    F --> G
+    G --> H[Model Selection]
+    H --> I[Predictions]
 ```
 
-### 🚀 Quick Start
+### Key Features
 
-#### Prerequisites
+- **Data Pipeline**: Automated cleaning and feature extraction from accelerometer readings (belt, forearm, arm, dumbbell sensors)
+- **Multi-Model Comparison**: Random Forest vs Gradient Boosted Trees with hyperparameter tuning
+- **Cross-Validation**: K-fold cross-validation for robust out-of-sample error estimation
+- **Reproducible Research**: Full RMarkdown report with embedded analysis and visualizations
 
-#### Installation
+### Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| R 4.3+ | Statistical computing and modeling |
+| caret | ML model training and tuning |
+| randomForest | Ensemble classification |
+| gbm | Gradient boosting |
+| RMarkdown | Reproducible reporting |
+
+### Quick Start
 
 ```bash
-git clone https://github.com/galafis/-Prediction-Assignment-Writeup.git
-cd -Prediction-Assignment-Writeup
+# With Docker
+docker build -t weight-lifting-prediction .
+docker run weight-lifting-prediction
+
+# Local
+Rscript -e "rmarkdown::render('src/prediction_report.Rmd', output_dir='docs/')"
 ```
 
-### 📁 Project Structure
+### Industry Applications
+
+- **Wearable Tech & IoT**: Quality assessment algorithms for fitness devices (Fitbit, Apple Watch, Garmin)
+- **Healthcare**: Physical therapy monitoring and rehabilitation progress tracking
+- **Sports Analytics**: Real-time exercise form correction and injury prevention systems
+- **Manufacturing**: Worker ergonomics monitoring and occupational safety compliance
+
+### Project Structure
 
 ```
--Prediction-Assignment-Writeup/
-├── assets/
-├── data/
-├── docs/          # Documentation
-├── src/          # Source code
-├── LICENSE
-├── README.md
-└── README_temp.md
+├── src/
+│   └── prediction_report.Rmd    # Main analysis report
+├── data/                         # Training and test datasets
+├── assets/                       # Visualizations and plots
+├── docs/                         # Generated HTML reports
+├── Dockerfile                    # Containerized R environment
+├── LICENSE                       # MIT License
+└── README.md
 ```
-
-### 🛠️ Tech Stack
-
-| Technology | Description | Role |
-|------------|-------------|------|
-| **HTML** | Core Language | Primary |
-
-### 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 👤 Author
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
 
 ---
 
 ## Português
 
-### 🎯 Visão Geral
+### Visão Geral
 
-** Prediction Assignment Writeup** é uma aplicação HTML de nível profissional que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
+Pipeline completo de Machine Learning para prever a qualidade de exercícios de levantamento de peso usando dados de acelerômetro de sensores vestíveis. O projeto implementa modelos Random Forest e Gradient Boosting com validação cruzada para classificar a execução dos exercícios em 5 categorias de qualidade (A-E).
 
-A base de código compreende **684 linhas** de código-fonte organizadas em **1 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
+### Funcionalidades Principais
 
-### ✨ Funcionalidades Principais
+- **Pipeline de Dados**: Limpeza automatizada e extração de features de sensores (cinto, antebraço, braço, haltere)
+- **Comparação Multi-Modelo**: Random Forest vs GBM com ajuste de hiperparâmetros
+- **Validação Cruzada**: K-fold cross-validation para estimativa robusta de erro fora da amostra
+- **Pesquisa Reproduzível**: Relatório RMarkdown completo com análise e visualizações integradas
 
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
+### Aplicações na Indústria
 
-### 🏗️ Arquitetura
+- **Wearable Tech & IoT**: Algoritmos de avaliação de qualidade para dispositivos fitness
+- **Saúde**: Monitoramento de fisioterapia e acompanhamento de reabilitação
+- **Analytics Esportivo**: Correção de forma de exercício em tempo real e prevenção de lesões
+- **Manufatura**: Monitoramento ergonômico de trabalhadores e conformidade de segurança
 
-```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
-```
-
-### 🚀 Início Rápido
-
-#### Prerequisites
-
-#### Installation
+### Como Executar
 
 ```bash
-git clone https://github.com/galafis/-Prediction-Assignment-Writeup.git
-cd -Prediction-Assignment-Writeup
+# Com Docker
+docker build -t weight-lifting-prediction .
+docker run weight-lifting-prediction
+
+# Local
+Rscript -e "rmarkdown::render('src/prediction_report.Rmd', output_dir='docs/')"
 ```
 
-### 📁 Estrutura do Projeto
+---
 
-```
--Prediction-Assignment-Writeup/
-├── assets/
-├── data/
-├── docs/          # Documentation
-├── src/          # Source code
-├── LICENSE
-├── README.md
-└── README_temp.md
-```
+## License
 
-### 🛠️ Stack Tecnológica
-
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **HTML** | Core Language | Primary |
-
-### 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
-### 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### 👤 Autor
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
